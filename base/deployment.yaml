@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: hello-go
+    app.kubernetes.io/part-of: hello-go
+  name: hello-go
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: hello-go
+      app.kubernetes.io/part-of: hello-go
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: hello-go
+        app.kubernetes.io/part-of: hello-go
+    spec:
+      containers:
+        - image: kangwoo/hello-go:0.0.1
+          name: hello-go
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP

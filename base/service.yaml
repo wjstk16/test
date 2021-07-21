@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-go
+  labels:
+    app.kubernetes.io/name: hello-go
+    app.kubernetes.io/part-of: hello-go
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: hello-go
+    app.kubernetes.io/part-of: hello-go
+  ports:
+    - port: 80
+      targetPort: http
