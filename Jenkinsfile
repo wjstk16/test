@@ -66,7 +66,7 @@ pipeline {
 
     stage('Mornitoring') {
       steps {
-        sh 'ls -al'
+        sh 'ls'
       }
     }
 
