@@ -1,11 +1,11 @@
 podTemplate(label: 'builder',
             containers: [
-                containerTemplate(name: 'gradle', image: 'gradle:5.6-jdk8', command: 'cat', ttyEnabled: true),
+                containerTemplate(name: 'gradle', image: 'hustakin/jenkins-slave:latest', command: 'cat', ttyEnabled: true),
             ]) {
     node('builder') {
         stage('Build') {
             container('gradle') {
-                sh "echo pipeline test"
+                sh "kubectl"
             }
         }
         stage('test') {
