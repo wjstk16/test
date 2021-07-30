@@ -1,11 +1,11 @@
 podTemplate(label: 'builder',
             containers: [
-                containerTemplate(name: 'gradle', image: 'gradle:5.6-jdk8', command: 'cat', ttyEnabled: true),
+                containerTemplate(name: 'gradle', image: 'hustakin/jenkins-slave:latest', command: 'cat', ttyEnabled: true),
             ],
             volumes: [
                 hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
                 hostPathVolume(mountPath: 'home/jenkins/.kube', hostPath: '/root/.kube'),
-                hostPathVolume(mountPath: '/bin/kubectl', hostPath: '/bin/kubectl'),
+                
             ]
 ) {
     node('builder') {
