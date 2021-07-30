@@ -6,7 +6,7 @@ node('jenkins-jnlp') {
         echo "1.Prepare Stage"
         checkout scm
         sh "docker ps"
-        sh "kubectl get po"
+        sh "kubectl get po -o wide"
     }
     
 }
