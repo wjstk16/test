@@ -10,7 +10,7 @@ podTemplate(label: 'builder',
         }
         stage('test') {
             container('gradle') {
-                sh "ech done"
+                sh "echo done"
             }
         }
     }
