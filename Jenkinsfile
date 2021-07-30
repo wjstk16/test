@@ -5,7 +5,7 @@ podTemplate(label: 'builder',
             volumes: [
                 hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
                 hostPathVolume(mountPath: 'home/jenkins/.kube', hostPath: '/root/.kube'),
-                #hostPathVolume(mountPath: '/usr/local/bin/argocd', hostPath: '/usr/local/bin/argocd'),
+                
             ]
 ) {
     node('builder') {
