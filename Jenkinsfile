@@ -8,5 +8,11 @@ podTemplate(label: 'builder',
                 sh "echo pipeline test"
             }
         }
+        stage('test') {
+            container('gradle') {
+                sh "ech done"
+            }
+        }
     }
+    
 }
