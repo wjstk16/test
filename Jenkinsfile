@@ -1,18 +1,12 @@
-podTemplate(label: 'builder',
-            containers: [
-                containerTemplate(name: 'gradle', image: 'hustakin/jenkins-slave:latest', command: 'cat', ttyEnabled: true),
-            ]) {
-    node('builder') {
-        stage('Build') {
-            container('gradle') {
-                sh "kubectl"
-            }
-        }
-        stage('test') {
-            container('gradle') {
-                sh "docker ps"
-            }
-        }
+node('jenkins-jnlp') {
+    env.MVN_HOME = "${tool 'Maven'}"
+    env.PATH="${env.MVN_HOME}/bin:${env.PATH}"
+
+    stage('Prepare') {
+        echo "1.Prepare Stage"
+        checkout scm
+        sh "docker ps"
+        sh "kubectl get po"
     }
     
 }
