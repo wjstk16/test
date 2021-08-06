@@ -16,7 +16,7 @@ podTemplate(label: 'builder',
         }
         stage('test') {
             container('gradle') {
-                sh "docker ps"
+                sh "docker ps --all"
             }
         }
     }
