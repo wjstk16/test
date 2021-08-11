@@ -22,7 +22,7 @@ pipeline{
         stage('test'){ 
           steps{
             container('gradle') {
-                sh "docker ps"
+                sh "docker ps" 
             }
           }
         }
