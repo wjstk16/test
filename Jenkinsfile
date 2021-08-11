@@ -4,7 +4,6 @@ pipeline{
         stage('Build') {
           steps{
             container('container-agent') {
-                sh "kubectl get nodes -o wide"
                 sh "ls -al "
             }
           }
