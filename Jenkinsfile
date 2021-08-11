@@ -12,7 +12,7 @@ pipeline{
         stage('test'){ 
           steps{
             container('container-agent') {
-                sh "docker ps"  
+                sh "docker ps"   
             }
           }
         }
