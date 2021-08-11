@@ -1,8 +1,8 @@
 pipeline{
-    agent {node{label 'pod-agent'}} 
+    agent {node{label 'pod-agent'}}
     stages{
         stage('Build') {
-          steps{
+          steps{            
             container('container-agent') {
                 sh "ls -al "
             }
