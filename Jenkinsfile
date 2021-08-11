@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('ttt') {
       steps {
-        sh 'ssh host -t "argocd app sync test"'
+        sh 'ls'
       }
     }
 
