@@ -7,18 +7,24 @@ podTemplate(label: 'builder',
                 hostPathVolume(mountPath: 'home/jenkins/.kube', hostPath: '/root/.kube'),
                 
             ]
-) {
-    node('builder') {
+)
+pipeline{
+    agent {node{label 'builder'}} 
+    stages{
         stage('Build') {
+          steps{
             container('gradle') {
                 sh "kubectl get nodes -o wide"
+                sh "ls -al "
             }
+          }
         }
-        stage('test') {
+        stage('test'){ 
+          steps{
             container('gradle') {
-                sh "docker ps --all"
+                sh "docker ps"
             }
+          }
         }
     }
-    
 }
