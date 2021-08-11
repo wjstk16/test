@@ -1,19 +1,9 @@
-podTemplate(label: 'builder',
-            containers: [
-                containerTemplate(name: 'gradle', image: 'hustakin/jenkins-slave:latest', command: 'cat', ttyEnabled: true),
-            ],
-            volumes: [
-                hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
-                hostPathVolume(mountPath: 'home/jenkins/.kube', hostPath: '/root/.kube'),
-                
-            ]
-)
 pipeline{
-    agent {node{label 'builder'}} 
+    agent {node{label 'pod-agent'}} 
     stages{
         stage('Build') {
           steps{
-            container('gradle') {
+            container('container-agent') {
                 sh "kubectl get nodes -o wide"
                 sh "ls -al "
             }
@@ -21,7 +11,7 @@ pipeline{
         }
         stage('test'){ 
           steps{
-            container('gradle') {
+            container('container-agent') {
                 sh "docker ps" 
             }
           }
