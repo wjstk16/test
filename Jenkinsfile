@@ -4,7 +4,6 @@ pipeline{
         stage('Build') {
           steps{
             container('container-agent') {
-                sh "kubectl get nodes -o wide"
                 sh "ls -al "
             }
           }
@@ -12,7 +11,7 @@ pipeline{
         stage('test'){ 
           steps{
             container('container-agent') {
-                sh "docker ps  "
+                sh "docker ps"
             }
           }
         }
