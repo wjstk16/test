@@ -8,15 +8,15 @@ podTemplate(label: 'builder',
                 
             ]
 ) {
-    node('builder') {
+    node('pod-agent') {
         stage('Build') {
-            container('gradle') {
+            container('container-agent') {
                 sh "kubectl get nodes -o wide"
                 sh "ls -al "
             }
         }
         stage('test') {
-            container('gradle') {
+            container('container-agent') {
                 sh "docker ps"
             }
         }
