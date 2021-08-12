@@ -7,7 +7,7 @@ podTemplate(label: 'builder',
                 hostPathVolume(mountPath: 'home/jenkins/.kube', hostPath: '/root/.kube'),
                 
             ]
-) {
+)
 pipeline{
     agent {node{label 'builder'}} 
     stages{
@@ -28,4 +28,4 @@ pipeline{
         }
     }
 }
-}
+
