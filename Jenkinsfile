@@ -1,4 +1,5 @@
-podTemplate(label: 'builder',
+pipeline{
+    podTemplate(label: 'builder',
             containers: [
                 containerTemplate(name: 'gradle', image: 'hustakin/jenkins-slave:latest', command: 'cat', ttyEnabled: true),
             ],
@@ -8,7 +9,6 @@ podTemplate(label: 'builder',
                 
             ]
 )
-pipeline{
     agent {node{label 'builder'}} 
     stages{
         stage('Build') {
