@@ -11,7 +11,7 @@ pipeline {
       parallel {
         stage('TB 1 Deploy') {
           steps {
-            sh 'ssh host -t "argocd app sync test"'
+            sh 'ls'
           }
         }
 
