@@ -28,7 +28,7 @@ pipeline {
       parallel {
         stage('CNF Test') {
           steps {
-            sh 'ls'
+            sh 'ls '
           }
         }
 
