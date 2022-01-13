@@ -1,10 +1,11 @@
-From: gnb //free5gc 첫번째 HO 잘될때
-Info: 127.0.0.1:9001, v2021-06-17  // path switch ack의 문제일지도..
-Time: 16:34:50.519
-Index: 219
+From: gNB  //free5gc 2번째 HO 잘 안될때
+Info: 127.0.0.1:9001, v2021-09-18
+Time: 16:22:34.274
+Index: 4631
 Message: RRC reconfiguration
 
 Data:
+
 {
   message c1: rrcReconfiguration: {
     rrc-TransactionIdentifier 0,
@@ -24,6 +25,12 @@ Data:
           {
             drb-Identity 1,
             reestablishPDCP true
+          }
+        },
+        securityConfig {
+          securityAlgorithmConfig {
+            cipheringAlgorithm nea0,
+            integrityProtAlgorithm nia0
           }
         }
       },
@@ -166,7 +173,7 @@ Data:
           spCellConfig {
             reconfigurationWithSync {
               spCellConfigCommon {
-                physCellId 501,
+                physCellId 500,
                 downlinkConfigCommon {
                   frequencyInfoDL {
                     absoluteFrequencySSB 621216,
@@ -264,17 +271,7 @@ Data:
                     pusch-ConfigCommon setup: {
                       pusch-TimeDomainAllocationList {
                         {
-                          k2 7,
-                          mappingType typeA,
-                          startSymbolAndLength 27
-                        },
-                        {
                           k2 4,
-                          mappingType typeA,
-                          startSymbolAndLength 27
-                        },
-                        {
-                          k2 5,
                           mappingType typeA,
                           startSymbolAndLength 27
                         }
@@ -305,7 +302,7 @@ Data:
                 },
                 ss-PBCH-BlockPower -27
               },
-              newUE-Identity 17923,
+              newUE-Identity 17922,
               t304 ms1000,
               smtc {
                 periodicityAndOffset sf20: 0,
@@ -749,7 +746,7 @@ Data:
                         groupOrSequenceHopping neither,
                         resourceType aperiodic: {
                         },
-                        sequenceId 501
+                        sequenceId 500
                       }
                     }
                   }
@@ -780,7 +777,7 @@ Data:
                     },
                     powerControlOffset 0,
                     powerControlOffsetSS db0,
-                    scramblingID 501,
+                    scramblingID 500,
                     periodicityAndOffset slots80: 1,
                     qcl-InfoPeriodicCSI-RS 0
                   },
@@ -799,7 +796,7 @@ Data:
                     },
                     powerControlOffset 0,
                     powerControlOffsetSS db0,
-                    scramblingID 501,
+                    scramblingID 500,
                     periodicityAndOffset slots40: 11,
                     qcl-InfoPeriodicCSI-RS 0
                   },
@@ -818,7 +815,7 @@ Data:
                     },
                     powerControlOffset 0,
                     powerControlOffsetSS db0,
-                    scramblingID 501,
+                    scramblingID 500,
                     periodicityAndOffset slots40: 11,
                     qcl-InfoPeriodicCSI-RS 0
                   },
@@ -837,7 +834,7 @@ Data:
                     },
                     powerControlOffset 0,
                     powerControlOffsetSS db0,
-                    scramblingID 501,
+                    scramblingID 500,
                     periodicityAndOffset slots40: 12,
                     qcl-InfoPeriodicCSI-RS 0
                   },
@@ -856,7 +853,7 @@ Data:
                     },
                     powerControlOffset 0,
                     powerControlOffsetSS db0,
-                    scramblingID 501,
+                    scramblingID 500,
                     periodicityAndOffset slots40: 12,
                     qcl-InfoPeriodicCSI-RS 0
                   }
@@ -977,7 +974,7 @@ Data:
         },
         masterKeyUpdate {
           keySetChangeIndicator FALSE,
-          nextHopChainingCount 0
+          nextHopChainingCount 2
         },
         dedicatedSIB1-Delivery {
           cellSelectionInfo {
@@ -1001,7 +998,7 @@ Data:
                   }
                 },
                 trackingAreaCode '000001'H,
-                cellIdentity '005432102'H,
+                cellIdentity '001234501'H,
                 cellReservedForOperatorUse notReserved
               }
             }
@@ -1116,17 +1113,7 @@ Data:
                 pusch-ConfigCommon setup: {
                   pusch-TimeDomainAllocationList {
                     {
-                      k2 7,
-                      mappingType typeA,
-                      startSymbolAndLength 27
-                    },
-                    {
                       k2 4,
-                      mappingType typeA,
-                      startSymbolAndLength 27
-                    },
-                    {
-                      k2 5,
                       mappingType typeA,
                       startSymbolAndLength 27
                     }
@@ -1171,6 +1158,6 @@ Data:
     }
   }
 }
-00:00:00.000
-|	
+
+|
 |
